@@ -419,7 +419,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 448695381}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1594935296}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: DisplayNextSentence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &448695381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,8 +1283,9 @@ GameObject:
   - component: {fileID: 1358767319}
   - component: {fileID: 1358767321}
   - component: {fileID: 1358767320}
+  - component: {fileID: 1358767322}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: DialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1339,6 +1352,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358767318}
   m_CullTransparentMesh: 1
+--- !u!95 &1358767322
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358767318}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cf018b76d23bdba4594fe332fefb94f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1566242888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1587,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2425ae3031607e4a8475131c1f502c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 1107782008}
+  dialogueText: {fileID: 0}
+  animator: {fileID: 1358767322}
 --- !u!4 &1594935297
 Transform:
   m_ObjectHideFlags: 0
@@ -1692,6 +1728,7 @@ GameObject:
   - component: {fileID: 1848686549}
   - component: {fileID: 1848686548}
   - component: {fileID: 1848686547}
+  - component: {fileID: 1848686550}
   m_Layer: 5
   m_Name: StartConversationButton
   m_TagString: Untagged
@@ -1763,7 +1800,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1848686548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1848686550}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1848686548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1802,6 +1851,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848686545}
   m_CullTransparentMesh: 1
+--- !u!114 &1848686550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848686545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13eba489ac3fc54499b5e3b76f63b7d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Lex Luther
+    sentences:
+    - Hey there!
+    - Buckaroo
 --- !u!1001 &2067373072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1894,8 +1960,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 935, y: -305.25}
-  m_SizeDelta: {x: 1870, y: 410.5}
+  m_AnchoredPosition: {x: 932.631, y: -305.25}
+  m_SizeDelta: {x: 1800, y: 410.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086344981
 MonoBehaviour:
